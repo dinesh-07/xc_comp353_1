@@ -12,6 +12,7 @@ if (isset($_POST['submit'])) {
     } else {
         $sql = "INSERT INTO student(name, student_number, email, phone_number, program) VALUES('$nn', '$sn', '$em', '$pn', '$pr')";
         if (mysqli_query($conn, $sql)) {
+ mail('dinesh.skini@gmail.com', 'PHP Test', "Hello from PHP");
             header('Location: index.php');
         } else {
             echo 'query error: ' . mysqli_error($conn);
